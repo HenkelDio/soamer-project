@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   width: 200px;
+  margin-right:30px;
 
   p {
     font-family: 'Inter', sans-serif;  
