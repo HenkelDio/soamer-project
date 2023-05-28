@@ -12,14 +12,6 @@ export default function Estoque() {
         <SideMenu />
         <Content>
           <h2>Estoque</h2>
-          <div>
-          <table>
-            <tr>
-              <td>Cód. Produto</td>
-              <td>Descrição</td>
-            </tr>
-          </table>
-          </div>
         </Content>
         <Menu />
       </Container>
