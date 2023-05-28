@@ -1,7 +1,9 @@
+import { Container } from "./style";
+
 export default function Content({children}) {
   return (
-    <>
-    {children}
-    </>
+    <Container>
+      {children}
+    </Container>
   )
 }

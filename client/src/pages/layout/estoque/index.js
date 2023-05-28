@@ -11,7 +11,10 @@ export default function Estoque() {
       <Container>
         <SideMenu />
         <Content>
-          <h2>Estoque</h2>
+          <h2>Ola</h2>
+          <div>
+            <p>codigo aqui</p>
+          </div>
         </Content>
         <Menu />
       </Container>
