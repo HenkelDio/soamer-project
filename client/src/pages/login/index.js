@@ -1,7 +1,7 @@
 import { Container, SectionImage, SectionLoginForm } from "./style"
 import group from '../../assets/group.svg';
 import FormGroup from "../../components/login/FormGroup";
-import Button from "../../components/button";
+import Button from "../../components/login/button";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function LoginPage() {
