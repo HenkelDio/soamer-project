@@ -34,9 +34,10 @@ export const List = styled.li`
       align-items: center;
       transition: 0.2s;
 
-      a {
+      p {
         font-size: 15px;
         margin-left: 10px;
+        font-weight: 500;
       }
 
       :hover{
@@ -45,7 +46,10 @@ export const List = styled.li`
 `;
 
 export const HomeContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.secondary.main};
+  ${({ theme, activated }) => activated && css`
+        background-color: ${({ theme }) => theme.colors.secondary.main};
+      `};
+  
   padding: 10px;
   border-radius: 4px;
 

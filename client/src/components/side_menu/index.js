@@ -3,25 +3,52 @@ import { Container, Divider, HomeContainer, List } from './style';
 import { AiFillHome } from 'react-icons/ai';
 import { FaBoxOpen, FaCashRegister } from 'react-icons/fa';
 import { MdPeopleAlt, MdOutlineLocationCity } from 'react-icons/md';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function SideMenu() {
-  const [activated, setActivated] = useState(false);
+  const [page, setPage] = useState({
+    'page': 'home'
+  });
 
+
+  useEffect(() => {
+    function handlePageSelection(selectedpage) {
+      setPage({page: selectedpage});
+    
+  
+      console.log(page)
+    }
+  }, [page])
+  
+
+
+
+
+ 
   return(
     <Container>
       <Link to="/home">
-        <HomeContainer>
+        <HomeContainer 
+        onClick={() => handlePageSelection('home')}
+        >
         <AiFillHome /> <p>Início</p>
         </HomeContainer>
       </Link>
       <Divider />
       <p>Seus módulos</p>
       <ul>
-        <List activated={activated} onClick={() => setActivated(true)}><FaBoxOpen /><Link to="/estoque">Estoque</Link></List>
-        <List activated={activated}><FaCashRegister /><Link to="/home">Financeiro</Link></List>
-        <List activated={activated}><MdPeopleAlt /><Link to="/home">Cliente</Link></List>
-        <List activated={activated}><MdOutlineLocationCity /><Link to="/home">Fornecedores</Link></List>
+      <Link to="/estoque" onClick={() => handlePageSelection('estoque')}>
+        <List><FaBoxOpen /><p>Estoque</p></List>
+      </Link>
+      <Link to="/home">
+        <List><FaCashRegister /><p>Financeiro</p></List>
+      </Link>
+      <Link to="/home">
+        <List><MdPeopleAlt /><p>Cliente</p></List>
+      </Link>
+      <Link to="/home">
+        <List><MdOutlineLocationCity /><p>Fornecedores</p></List>
+      </Link>
       </ul>
     </Container>
   )
