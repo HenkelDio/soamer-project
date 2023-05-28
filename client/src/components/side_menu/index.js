@@ -6,30 +6,11 @@ import { MdPeopleAlt, MdOutlineLocationCity } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 
 export default function SideMenu() {
-  const [page, setPage] = useState({
-    'page': 'home'
-  });
-
-
-  useEffect(() => {
-    function handlePageSelection(selectedpage) {
-      setPage({page: selectedpage});
-    
-  
-      console.log(page)
-    }
-  }, [page])
-  
-
-
-
-
  
   return(
     <Container>
       <Link to="/home">
         <HomeContainer 
-        onClick={() => handlePageSelection('home')}
         >
         <AiFillHome /> <p>Início</p>
         </HomeContainer>
@@ -37,7 +18,7 @@ export default function SideMenu() {
       <Divider />
       <p>Seus módulos</p>
       <ul>
-      <Link to="/estoque" onClick={() => handlePageSelection('estoque')}>
+      <Link to="/estoque">
         <List><FaBoxOpen /><p>Estoque</p></List>
       </Link>
       <Link to="/home">
