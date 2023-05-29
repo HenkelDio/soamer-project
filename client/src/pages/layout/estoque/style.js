@@ -29,16 +29,16 @@ export const ContainerOptions = styled.div`
   gap: 10px;
 
   a{
-    color: black;
     text-decoration: none;
   }
 
   .btn{
     font-size: 15px;
+    color: ${({ theme }) => theme.colors.secondary.dark};
   }
   .btnEdit{
     font-size: 18px;
-
+    color: black;
   }
 `;
 

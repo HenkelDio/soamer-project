@@ -7,6 +7,7 @@ import SideMenu from "../../../components/side_menu";
 import { Container } from "../style";
 import Card from "./Card";
 import { ContainerEstoque } from "./style";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Estoque() {
   const [data, setData] = useState([
@@ -34,7 +35,11 @@ export default function Estoque() {
           }
           </ContainerEstoque>
         </Content>
-        <Menu />
+        <Menu>
+          <strong>estoque</strong>
+          <Link to='/'>cadastro</Link>
+          <Link to='/'>entrada/saída</Link>
+        </Menu>
       </Container>
     </>
   )
