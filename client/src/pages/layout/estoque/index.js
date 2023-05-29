@@ -8,6 +8,8 @@ import { Container } from "../style";
 import Card from "./Card";
 import { ContainerEstoque } from "./style";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Input from "../../../components/Input";
+import { useMemo } from "react";
 
 export default function Estoque() {
   const [data, setData] = useState([
@@ -15,6 +17,14 @@ export default function Estoque() {
     {code:  'SO-A01C', description: 'PONT INOX CHANF AUDI A1'},
     {code:  'SO-A02C', description: 'PONT INOX CHANF AUDI A3 HATCH OU SEDAN'}
   ])
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredData = useMemo(() => data.filter((value) => (
+    value.description.toLowerCase().includes(searchTerm.toLowerCase()))), [data, searchTerm]);
+
+  function handleChangeSearchTerm(e) {
+    setSearchTerm(e.target.value);
+  }
 
   return(
     <>
@@ -23,10 +33,15 @@ export default function Estoque() {
         <SideMenu />
         <Content>
           <ContainerEstoque>
-          <input type="text" placeholder="Pesquisar" />
-          <Button>Novo cadastro</Button>
+          <Input 
+          value={searchTerm}
+          type="text" 
+          placeholder="Pesquisar" 
+          onChange={handleChangeSearchTerm}
+          />
+          <Link to='/estoque-create'><Button>Novo cadastro</Button></Link>
           {
-            data.map((data) => {
+            filteredData.map((data) => {
               return <Card
               code={data.code}
               description={data.description}
@@ -37,7 +52,7 @@ export default function Estoque() {
         </Content>
         <Menu>
           <strong>estoque</strong>
-          <Link to='/'>cadastro</Link>
+          <Link to='/estoque-create'>cadastro</Link>
           <Link to='/'>entrada/saída</Link>
         </Menu>
       </Container>

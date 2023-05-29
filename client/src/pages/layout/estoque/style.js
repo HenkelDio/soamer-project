@@ -4,13 +4,6 @@ export const ContainerEstoque = styled.div`
   display: flex;
   flex-direction:column;
   gap: 15px;
-
-  input{
-    border: none;
-    background-color: #E0E0E0;
-    border-radius: 6px;
-    padding: 8px 10px;
-  }
 `;
 
 

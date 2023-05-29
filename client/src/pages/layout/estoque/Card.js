@@ -8,8 +8,8 @@ export default function Card(props){
     <p><strong>Cód. produto: </strong> {props.code}</p>
     <p><strong>Descrição:</strong> {props.description}</p>
     <ContainerOptions>
-    <Link to='/' className='btnEdit'><FaEdit/></Link>
-    <Link to='/' className='btn'>ver mais</Link>
+    <Link to='/404' className='btnEdit'><FaEdit/></Link>
+    <Link to='/404' className='btn'>ver mais</Link>
     </ContainerOptions>
   </CardContainer>
   )

@@ -22,6 +22,17 @@ export const Container = styled.div`
   }
 `;
 
+export const ContainerSideMenu = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  .dividerVertical{
+    height: 100%;
+    width: 3px;
+    background-color: #D7D7D7;
+  }
+`;
+
 export const List = styled.li`
       list-style: none;
       padding: 10px;
@@ -56,6 +67,10 @@ export const HomeContainer = styled.div`
 
   display: flex;
   align-items: center;
+
+  :hover{
+        background-color: ${({ theme }) => theme.colors.secondary.main};
+      }
 
   p {
     font-weight: 500;

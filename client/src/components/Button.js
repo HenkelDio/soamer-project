@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Button = styled.button`
   border: none;
@@ -9,4 +9,8 @@ export const Button = styled.button`
   font-family: 'Inter';
   border-radius: 6px;
   cursor: pointer;
+
+  ${({ theme, deactivated }) => deactivated && css`
+    background-color: #ccc;
+  `}
 `;

@@ -8,3 +8,12 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
+
+export const ContainerNotFound = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  font-family: 'Inter';
+`;
