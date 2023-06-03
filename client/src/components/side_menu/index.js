@@ -3,7 +3,6 @@ import { Container, ContainerSideMenu, Divider, HomeContainer, List } from './st
 import { AiFillHome } from 'react-icons/ai';
 import { FaBoxOpen, FaCashRegister } from 'react-icons/fa';
 import { MdPeopleAlt, MdOutlineLocationCity } from 'react-icons/md';
-import { useEffect, useState } from 'react';
 
 export default function SideMenu() {
  

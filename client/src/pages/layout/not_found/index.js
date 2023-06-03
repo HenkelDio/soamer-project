@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Content from "../../../components/content";
 import Header from "../../../components/header";
 import Menu from "../../../components/menu";
