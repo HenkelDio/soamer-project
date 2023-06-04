@@ -30,6 +30,8 @@ export default function Financeiro() {
             <input type="date" />
           </FormDate>
 
+          <Button>Cadastrar novo título</Button>
+
           <div className="options">
           <Button
            onClick={() => setChangePage('pagar')}
