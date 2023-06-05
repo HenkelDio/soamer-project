@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../../../components/Button";
 import Content from "../../../components/content";
 import Header from "../../../components/header";
@@ -17,6 +17,16 @@ export default function Estoque() {
     {code:  'SO-A01C', description: 'PONT INOX CHANF AUDI A1'},
     {code:  'SO-A02C', description: 'PONT INOX CHANF AUDI A3 HATCH OU SEDAN'}
   ])
+
+  const localData = localStorage.getItem();
+  
+  useEffect(() => {
+    setData(prevState => [
+      prevState,
+      
+    ])
+  }, [])
+
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredData = useMemo(() => data.filter((value) => (
@@ -43,6 +53,7 @@ export default function Estoque() {
           {
             filteredData.map((data) => {
               return <Card
+              key={data.code}
               code={data.code}
               description={data.description}
               />
