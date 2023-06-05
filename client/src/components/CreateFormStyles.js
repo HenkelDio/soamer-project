@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerCreateEstoque = styled.div`
+export const ContainerCreate = styled.div`
   font-family: 'Inter';
 
 
