@@ -9,7 +9,7 @@ import Select from "../../../../components/Select";
 import Button from "../../../../components/login/button";
 import { ContainerCreate } from "../../../../components/CreateFormStyles";
 
-export default function EstoqueCreate() {
+export default function FinanceiroCreateAPagar() {
   return(
     <>
       <Header />
@@ -18,13 +18,13 @@ export default function EstoqueCreate() {
         <Content>
 
           <ContainerCreate>
-            <Link to="/estoque">{'<'} Voltar</Link>
-            <h2>Cadastrar novo item</h2>
+            <Link to="/financeiro">{'<'} Voltar</Link>
+            <h2>Cadastrar novo título a pagar</h2>
             <form>
-              <Input placeholder="Código"/>
-              <Input placeholder="Nome"/>
-              <Input placeholder="Modelo"/>
-              <Select>
+              <Input placeholder="Data"/>
+              <Input placeholder="Descrição"/>
+              <Input placeholder="Forma de pagamento"/>
+              <Select placeholder="Forma de pagamento">
                 <option value='' disabled selected hidden>Indústria</option>
                 <option>SOAMER PONTEIRAS AUTOMOTIVAS</option>
                 <option>GM CONCESSIONÁRIAS</option>

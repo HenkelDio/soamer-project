@@ -12,9 +12,6 @@ import { useState } from "react";
 
 export default function Financeiro() {
   const [changePage, setChangePage] = useState('pagar');
-
-  console.log(changePage);
-
   return(
     <>
     <Header />
@@ -30,7 +27,10 @@ export default function Financeiro() {
             <input type="date" />
           </FormDate>
 
+          
+
           <div className="options">
+          <div className="changePage">
           <Button
            onClick={() => setChangePage('pagar')}
            deactivated={changePage === 'receber' ? true : false}
@@ -44,6 +44,8 @@ export default function Financeiro() {
           > 
               Contas a receber
           </Button>
+          </div>
+          <Link to="/financeiro-create-pagar"><Button>Cadastrar</Button></Link>
           </div>
 
           <Card>
