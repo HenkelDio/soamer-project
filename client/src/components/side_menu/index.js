@@ -24,7 +24,7 @@ export default function SideMenu() {
       <Link to="/financeiro">
         <List><FaCashRegister /><p>Financeiro</p></List>
       </Link>
-      <Link to="/404">
+      <Link to="/cliente">
         <List><MdPeopleAlt /><p>Cliente</p></List>
       </Link>
       <Link to="/404">

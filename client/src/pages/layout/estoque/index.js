@@ -18,7 +18,6 @@ export default function Estoque() {
     {code:  'SO-A02C', description: 'PONT INOX CHANF AUDI A3 HATCH OU SEDAN'}
   ])
 
-  const localData = localStorage.getItem();
   
   useEffect(() => {
     setData(prevState => [
