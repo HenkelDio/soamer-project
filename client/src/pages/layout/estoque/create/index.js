@@ -4,10 +4,10 @@ import Menu from "../../../../components/menu";
 import SideMenu from "../../../../components/side_menu";
 import { Container } from "../../style";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { ContainerCreateEstoque } from "./style";
 import Input from "../../../../components/Input";
 import Select from "../../../../components/Select";
 import Button from "../../../../components/login/button";
+import { ContainerCreate } from "../../../../components/CreateFormStyles";
 import { useEffect, useState } from "react";
 
 export default function EstoqueCreate() {
@@ -81,7 +81,7 @@ export default function EstoqueCreate() {
         <SideMenu />
         <Content>
 
-          <ContainerCreateEstoque>
+          <ContainerCreate>
             <Link to="/estoque">{'<'} Voltar</Link>
             <h2>Cadastrar novo item</h2>
             <form onSubmit={e => handleShowInformation(e)}>
@@ -119,7 +119,7 @@ export default function EstoqueCreate() {
               </div>
               <Button>Salvar</Button>
             </form>
-          </ContainerCreateEstoque>
+          </ContainerCreate>
 
         </Content>
         <Menu>

@@ -5,6 +5,13 @@ export const ContainerFinanceiro = styled.div`
   .options{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    padding-right: 17px;
+  }
+
+  .changePage {
+    display: flex;
+    flex-direction: row;
     gap: 10px;
   }
 `;
