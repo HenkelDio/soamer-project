@@ -13,7 +13,7 @@ export default function Modal({ isOpen, setOpen }) {
       <Container>
         <div onClick={() => setOpen(false)}>X</div>
         <h2>Cadastrar novo:</h2>
-        <Link to="/financeiro-create-pagar"><Button>A RECEBER</Button></Link>
+        <Link to="/financeiro-create-receber"><Button>A RECEBER</Button></Link>
         <Link to="/financeiro-create-pagar"><Button>A PAGAR</Button></Link>
       </Container>
     </Overlay>

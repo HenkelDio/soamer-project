@@ -7,6 +7,7 @@ import Financeiro from './pages/layout/financeiro';
 import EstoqueCreate from './pages/layout/estoque/create';
 import NotFound from './pages/layout/not_found';
 import FinanceiroCreateAPagar from './pages/layout/financeiro/create/create_a_pagar';
+import FinanceiroCreateAReceber from './pages/layout/financeiro/create/create_a_receber';
 
 export default function Routes(){
   return (
@@ -17,6 +18,7 @@ export default function Routes(){
       <Route path="/estoque-create" component={EstoqueCreate} />
       <Route path="/financeiro" component={Financeiro} />
       <Route path="/financeiro-create-pagar" component={FinanceiroCreateAPagar} />
+      <Route path="/financeiro-create-receber" component={FinanceiroCreateAReceber} />
       <Route path="/404" component={NotFound} />
     </Switch>
   )
