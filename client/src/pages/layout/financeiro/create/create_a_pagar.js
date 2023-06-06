@@ -8,10 +8,17 @@ import Input from "../../../../components/Input";
 import Select from "../../../../components/Select";
 import Button from "../../../../components/login/button";
 import { ContainerCreate } from "../../../../components/CreateFormStyles";
+import { useState } from "react";
+import Modal from "../../../../components/modal";
 
 export default function FinanceiroCreateAPagar() {
+
+
   return(
     <>
+
+
+
       <Header />
       <Container>
         <SideMenu />
@@ -21,14 +28,9 @@ export default function FinanceiroCreateAPagar() {
             <Link to="/financeiro">{'<'} Voltar</Link>
             <h2>Cadastrar novo título a pagar</h2>
             <form>
-              <Input placeholder="Data"/>
+              <Input type="date"/>
               <Input placeholder="Descrição"/>
               <Input placeholder="Forma de pagamento"/>
-              <Select placeholder="Forma de pagamento">
-                <option value='' disabled selected hidden>Indústria</option>
-                <option>SOAMER PONTEIRAS AUTOMOTIVAS</option>
-                <option>GM CONCESSIONÁRIAS</option>
-              </Select>
               <div>
                 <Input placeholder="Preço" type="number"/>
                 <Input placeholder="Peso bruto (Kg)" type="number" />
