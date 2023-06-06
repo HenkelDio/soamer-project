@@ -6,15 +6,17 @@ import Estoque from './pages/layout/estoque';
 import Financeiro from './pages/layout/financeiro';
 import EstoqueCreate from './pages/layout/estoque/create';
 import NotFound from './pages/layout/not_found';
-import ClienteCreate from './pages/layout/cliente';
+import Cliente from './pages/layout/cliente';
 import FinanceiroCreateAPagar from './pages/layout/financeiro/create/create_a_pagar';
+import ClienteCreate from './pages/layout/cliente/create';
 
 export default function Routes(){
   return (
     <Switch>
       <Route exact path="/" component={LoginPage} />
       <Route path="/home" component={Home} />
-      <Route path="/cliente" component={ClienteCreate} />
+      <Route path='/cliente' component={Cliente} />
+      <Route path="/cliente-create" component={ClienteCreate} />
       <Route path="/estoque" component={Estoque} />
       <Route path="/estoque-create" component={EstoqueCreate} />
       <Route path="/financeiro" component={Financeiro} />

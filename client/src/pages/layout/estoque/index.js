@@ -19,12 +19,6 @@ export default function Estoque() {
   ])
 
   
-  useEffect(() => {
-    setData(prevState => [
-      prevState,
-      
-    ])
-  }, [])
 
   const [searchTerm, setSearchTerm] = useState('');
 

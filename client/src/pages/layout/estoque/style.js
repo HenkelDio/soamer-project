@@ -6,6 +6,12 @@ export const ContainerEstoque = styled.div`
   gap: 15px;
 `;
 
+export const ContainerCliente = styled.div`
+  display: flex;
+  flex-direction:column;
+  gap: 15px;
+`;
+
 
 export const CardContainer = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
