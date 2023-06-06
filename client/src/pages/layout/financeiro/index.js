@@ -9,11 +9,21 @@ import { ContainerFinanceiro, FormDate, Card } from "./style";
 import TableAReceber from "./table_a_receber";
 import TableAPagar from "./table_a_pagar";
 import { useState } from "react";
+import Modal from "../../../components/modal";
 
 export default function Financeiro() {
   const [changePage, setChangePage] = useState('pagar');
+  const [isOpen, setOpen] = useState(false);
+
+  function handleOpenModal() {
+    setOpen(prevState => !prevState);
+  }
+
   return(
     <>
+  
+    <Modal isOpen={isOpen} setOpen={setOpen} />
+
     <Header />
     <Container>
       <SideMenu />
@@ -45,7 +55,9 @@ export default function Financeiro() {
               Contas a receber
           </Button>
           </div>
-          <Link to="/financeiro-create-pagar"><Button>Cadastrar</Button></Link>
+          <Button
+            onClick={handleOpenModal}
+          >Cadastrar</Button>
           </div>
 
           <Card>
