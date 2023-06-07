@@ -9,7 +9,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Input from "../../../components/Input";
 import { useMemo } from "react";
 import { ContainerCliente } from "../estoque/style";
-import Card from "./card";
+import Modal from "../../../components/modal";
+import Card from "../../../components/Card";
 
 export default function Cliente() {
   const [data, setData] = useState([
@@ -19,12 +20,12 @@ export default function Cliente() {
 
   ])
 
-  
+  const [isOpen, setOpen] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredData = useMemo(() => data.filter((value) => (
-    value.phone.toLowerCase().includes(searchTerm.toLowerCase()))), [data, searchTerm]);
+    value.name.toLowerCase().includes(searchTerm.toLowerCase()))), [data, searchTerm]);
 
   function handleChangeSearchTerm(e) {
     setSearchTerm(e.target.value);
@@ -32,6 +33,15 @@ export default function Cliente() {
 
   return(
     <>
+
+      <Modal 
+        isOpen={isOpen} 
+        setOpen={setOpen} 
+        firstTitle="PESSOA FÍSICA"
+        firstRoute="/cliente-create-fisica"
+        secondTitle="PESSOA JURÍDICA"
+        secondRoute="/cliente-create-juridica"
+      />
       <Header />
       <Container>
         <SideMenu />
@@ -43,13 +53,17 @@ export default function Cliente() {
           placeholder="Pesquisar" 
           onChange={handleChangeSearchTerm}
           />
-          <Link to='/cliente-create'><Button>Novo cadastro</Button></Link>
+         <Button
+         onClick={() => setOpen(prevState => prevState = true)}
+         >Novo cadastro</Button>
           {
             filteredData.map((data) => {
               return <Card
               key={data.name}
-              name={data.name}
-              phone={data.phone}
+              firstTitle="Nome completo"
+              firstValue={data.name}
+              secondTitle="Telefone"
+              secondValue={data.phone}
               />
             })
           }

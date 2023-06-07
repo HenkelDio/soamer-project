@@ -5,25 +5,24 @@ import Header from "../../../components/header";
 import Menu from "../../../components/menu";
 import SideMenu from "../../../components/side_menu";
 import { Container } from "../style";
-import { ContainerEstoque } from "./style";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Input from "../../../components/Input";
 import { useMemo } from "react";
+import { ContainerCliente } from "../estoque/style";
 import Card from "../../../components/Card";
 
-export default function Estoque() {
+export default function Fornecedores() {
   const [data, setData] = useState([
-    {code:  'SO-37101', description: 'PONT INOX RED UNIVERSAL Ø 101,6mm COMPRIMENTO 125mm'}, 
-    {code:  'SO-A01C', description: 'PONT INOX CHANF AUDI A1'},
-    {code:  'SO-A02C', description: 'PONT INOX CHANF AUDI A3 HATCH OU SEDAN'}
-  ])
+    {name:  'Fornecedor1', phone: '41 9999-9999'},
+    {name:  'Fornecedor2', phone: '41 9999-9999'},
+    {name:  'Fornecedor3', phone: '41 9999-9999'},
 
-  
+  ])
 
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredData = useMemo(() => data.filter((value) => (
-    value.description.toLowerCase().includes(searchTerm.toLowerCase()))), [data, searchTerm]);
+    value.name.toLowerCase().includes(searchTerm.toLowerCase()))), [data, searchTerm]);
 
   function handleChangeSearchTerm(e) {
     setSearchTerm(e.target.value);
@@ -35,31 +34,30 @@ export default function Estoque() {
       <Container>
         <SideMenu />
         <Content>
-          <ContainerEstoque>
+          <ContainerCliente>
           <Input 
           value={searchTerm}
           type="text" 
           placeholder="Pesquisar" 
           onChange={handleChangeSearchTerm}
           />
-          <Link to='/estoque-create'><Button>Novo cadastro</Button></Link>
+         <Link to="/fornecedores-create"><Button>Novo cadastro</Button></Link>
           {
             filteredData.map((data) => {
               return <Card
               key={data.name}
-              firstTitle="Cód. produto"
-              firstValue={data.code}
-              secondTitle="Descrição"
-              secondValue={data.description}
+              firstTitle="Nome"
+              firstValue={data.name}
+              secondTitle="Telefone"
+              secondValue={data.phone}
               />
             })
           }
-          </ContainerEstoque>
+          </ContainerCliente>
         </Content>
         <Menu>
-          <strong>estoque</strong>
-          <Link to='/estoque-create'>cadastro</Link>
-          <Link to='/'>entrada/saída</Link>
+          <strong>Fornecedor</strong>
+          <Link to="/fornecedores-create">cadastro</Link>
         </Menu>
       </Container>
     </>

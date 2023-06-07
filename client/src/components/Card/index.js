@@ -1,13 +1,15 @@
-
 import { FaEdit } from "react-icons/fa"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { CardContainer, ContainerOptions } from "../estoque/style";
+import { CardContainer, ContainerOptions } from "./style";
 
-export default function Card(props){
+export default function Card({
+  firstTitle, firstValue,
+  secondTitle, secondValue
+}){
   return(
     <CardContainer>
-    <p><strong>Nome Completo: </strong> {props.name}</p>
-    <p><strong>Telefone:</strong> {props.phone}</p>
+    <p><strong>{firstTitle}: </strong> {firstValue}</p>
+    <p><strong>{secondTitle}:</strong> {secondValue}</p>
     <ContainerOptions>
     <Link to='/404' className='btnEdit'><FaEdit/></Link>
     <Link to='/404' className='btn'>ver mais</Link>

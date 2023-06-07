@@ -8,7 +8,7 @@ import Menu from "../../../../components/menu";
 import { Container } from "../../style";
 import Button from "../../../../components/login/button";
 
-export default function ClienteCreate() {
+export default function ClienteCreateJuridica() {
 
   return (
     <>
@@ -18,12 +18,12 @@ export default function ClienteCreate() {
         <Content>
           <ContainerCreate>
             <Link to="/cliente">{'<'} Voltar</Link>
-            <h2>Cadastrar novo cliente</h2>
+            <h2>Cadastrar novo cliente pessoa jurídica</h2>
             <form>
-              <Input placeholder="Nome Completo" />
-              <Input placeholder="CPF" />
-              <Input placeholder="Data de nascimento" />
+              <Input placeholder="Razão social" />
+              <Input placeholder="CNPJ" />  
               <Input placeholder="Telefone" />
+              <Input placeholder="Contato" />
               <Input placeholder="E-mail" />
               <Input placeholder="CEP" />
               <Input placeholder="Logradouro" />
@@ -35,8 +35,8 @@ export default function ClienteCreate() {
           </ContainerCreate>
         </Content>
         <Menu>
-          <strong>Cliente</strong>
-          <Link to='/'>cadastro </Link>
+          <strong>Pessoa jurídica</strong>
+          <Link to='/cliente-create-fisica'>cadastro pessoa física</Link>
         </Menu>
       </Container>
     </>

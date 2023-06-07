@@ -27,7 +27,7 @@ export default function SideMenu() {
       <Link to="/cliente">
         <List><MdPeopleAlt /><p>Cliente</p></List>
       </Link>
-      <Link to="/404">
+      <Link to="/fornecedores">
         <List><MdOutlineLocationCity /><p>Fornecedores</p></List>
       </Link>
       </ul>

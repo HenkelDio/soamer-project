@@ -3,7 +3,7 @@ import { Container, Overlay } from "./styles";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Button from '../login/button';
 
-export default function Modal({ isOpen, setOpen }) {
+export default function Modal({ isOpen, setOpen, firstTitle, firstRoute, secondTitle, secondRoute }) {
   if(!isOpen) {
     return null;
   }
@@ -13,8 +13,8 @@ export default function Modal({ isOpen, setOpen }) {
       <Container>
         <div onClick={() => setOpen(false)}>X</div>
         <h2>Cadastrar novo:</h2>
-        <Link to="/financeiro-create-receber"><Button>A RECEBER</Button></Link>
-        <Link to="/financeiro-create-pagar"><Button>A PAGAR</Button></Link>
+        <Link to={firstRoute}><Button>{firstTitle}</Button></Link>
+        <Link to={secondRoute}><Button>{secondTitle}</Button></Link>
       </Container>
     </Overlay>
 

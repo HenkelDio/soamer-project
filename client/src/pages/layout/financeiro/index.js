@@ -22,7 +22,14 @@ export default function Financeiro() {
   return(
     <>
   
-    <Modal isOpen={isOpen} setOpen={setOpen} />
+    <Modal 
+      isOpen={isOpen} 
+      setOpen={setOpen} 
+      firstTitle="A RECEBER"
+      firstRoute="/financeiro-create-receber"
+      secondTitle="A PAGAR"
+      secondRoute="/financeiro-create-pagar"
+    />
 
     <Header />
     <Container>
