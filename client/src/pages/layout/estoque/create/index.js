@@ -9,26 +9,25 @@ import Select from "../../../../components/Select";
 import Button from "../../../../components/login/button";
 import { ContainerCreate } from "../../../../components/CreateFormStyles";
 import { useEffect, useState } from "react";
+import { collection, query, orderBy, onSnapshot, doc, setDoc } from "firebase/firestore";
+import { db } from '../../../../firebase';
+import { useHistory } from 'react-router-dom'; 
 
 export default function EstoqueCreate() {
 
-    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
     const [codigo, setCodigo] = useState('');
     const [modelo, setModelo] = useState('');
     const [preco, setPreco] = useState('');
     const [precoBruto, setPrecoBruto] = useState('');
     const [quantidade, setQuantidade] = useState('');
     const [estoqueMinimo, setEstoqueMinimo] = useState('');
+    const [industry, setIndustry] = useState('');
 
-  useEffect(() => {
-    function handleLocalStorage(){
-      localStorage.setItem('nome','alexia')
-    }
-    handleLocalStorage();
-  }, [])
+    const history = useHistory();
 
-  function handleChangeName(e){
-    setName(e.target.value)
+  function handleChangeDescription(e){
+    setDescription(e.target.value)
   }
 
   function handleChangeCodigo(e){
@@ -55,23 +54,23 @@ export default function EstoqueCreate() {
     setEstoqueMinimo(e.target.value)
   }
 
-  function handleShowInformation(e){
+  function handleChangeIndustry(e) {
+    setIndustry(prevState => prevState = e.target.value);
+  }
+
+  async function handleCreateItem(e)  {
     e.preventDefault();
-
-    const data = ({
-      name,
-      codigo,
-      modelo,
-      preco,
-      precoBruto,
-      quantidade,
-      estoqueMinimo
+    await setDoc(doc(db, 'estoque', codigo), {
+      code: codigo,
+      description: description,
+      model: modelo,
+      price: preco,
+      gross_weight: precoBruto,
+      amount: quantidade,
+      min_stock: estoqueMinimo,
+      industry: industry
     })
-
-    const code = JSON.stringify(data.codigo);
-    const toString = JSON.stringify(data);
-
-    localStorage.setItem('item', toString)
+    history.push('/estoque')
   }
 
   return(
@@ -84,20 +83,20 @@ export default function EstoqueCreate() {
           <ContainerCreate>
             <Link to="/estoque">{'<'} Voltar</Link>
             <h2>Cadastrar novo item</h2>
-            <form onSubmit={e => handleShowInformation(e)}>
+            <form onSubmit={e => handleCreateItem(e)}>
               <Input
                 onChange={e => handleChangeCodigo(e)}
                 placeholder="Código"/>
               <Input 
-                onChange={e => handleChangeName(e)}
-                placeholder="Nome"/>
+                onChange={e => handleChangeDescription(e)}
+                placeholder="Descrição"/>
               <Input
                 onChange={e => handleChangeModelo(e)}
                 placeholder="Modelo"/>
-              <Select>
-                <option disabled hidden>Indústria</option>
-                <option>SOAMER PONTEIRAS AUTOMOTIVAS</option>
-                <option>GM CONCESSIONÁRIAS</option>
+              <Select onChange={e => handleChangeIndustry(e)}>
+                <option disabled selected>Indústria</option>
+                <option value="SOAMER PONTEIRAS AUTOMOTIVAS">SOAMER PONTEIRAS AUTOMOTIVAS</option>
+              <option value="GM CONCESSIONÁRIAS">GM CONCESSIONÁRIAS</option>
               </Select>
               <div>
                 <Input
