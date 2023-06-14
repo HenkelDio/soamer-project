@@ -90,7 +90,7 @@ export default function Estoque() {
         <Menu>
           <strong>estoque</strong>
           <Link to='/estoque-create'>cadastro</Link>
-          <Link to='/'>entrada/saída</Link>
+          <Link to='/estoque-entrada-saida'>entrada/saída</Link>
         </Menu>
       </Container>
     </>

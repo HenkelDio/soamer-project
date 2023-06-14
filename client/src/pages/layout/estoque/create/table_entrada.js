@@ -1,4 +1,4 @@
-export default function tableEntrada(){
+export default function TableEntrada(){
   return(
     <table>
       <thead>

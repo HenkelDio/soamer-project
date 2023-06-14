@@ -12,7 +12,7 @@ export const ContainerCliente = styled.div`
   gap: 15px;
 `;
 
-export con
+export const Card = styled.div`
 
 table th {
   border:1px solid #b3adad;
@@ -27,4 +27,8 @@ table td {
   background: #ffffff;
   color: #313030;
 }
+
+`;
+
+
 
