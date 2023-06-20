@@ -1,9 +1,9 @@
-export default function TableEntrada({ entryDataType }){
+export default function TableSaida({exitDataType}){
 
-  if(entryDataType.length === 0) {
+  if(exitDataType.length === 0) {
     return <b>Nenhum dado encontrado...</b>
   } 
-   
+
   return(
     <table>
     <thead>
@@ -15,8 +15,8 @@ export default function TableEntrada({ entryDataType }){
       </tr>
     </thead>
     <tbody>
-      {
-        entryDataType.map((item) => {
+    {
+        exitDataType.map((item) => {
           return <tr>
           <td>{item.data.data}</td>
           <td>{item.data.type}</td>

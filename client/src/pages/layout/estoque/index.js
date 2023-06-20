@@ -85,6 +85,9 @@ export default function Estoque() {
               />
             })
           }
+          {
+            data.length === 0 && <b>Nenhum dado encontrado...</b>
+          }
           </ContainerEstoque>
         </Content>
         <Menu>

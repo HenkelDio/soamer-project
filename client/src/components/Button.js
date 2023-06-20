@@ -6,7 +6,7 @@ export const Button = styled.button`
   height: 28px;
   background-color: ${({ theme }) => theme.colors.primary.main};
   color: #ffff;
-  font-family: 'Inter';
+  font-family: 'Inter', 'Sans-serif';
   border-radius: 6px;
   cursor: pointer;
 

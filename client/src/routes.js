@@ -14,6 +14,7 @@ import ClienteCreateJuridica from './pages/layout/cliente/create/create_juridica
 import Fornecedores from './pages/layout/fornecedores';
 import createFornecedor from './pages/layout/fornecedores/create/create';
 import EntradaSaidaPage from './pages/layout/estoque/entrada_saida';
+import NewRegister from './pages/layout/estoque/create/new_register';
 
 export default function Routes(){
   return (
@@ -32,6 +33,7 @@ export default function Routes(){
       <Route path="/fornecedores-create" component={createFornecedor} />
       <Route path="/404" component={NotFound} />
       <Route path='/estoque-entrada-saida' component={EntradaSaidaPage} />
+      <Route path='/estoque-novo-registro' component={NewRegister} />
     </Switch>
   )
 }
